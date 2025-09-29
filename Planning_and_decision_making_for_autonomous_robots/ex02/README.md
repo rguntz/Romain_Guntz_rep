@@ -1,4 +1,4 @@
-# Searching Algorithms 
+# Pathfinding Algorithms
 
 This project contains implementations for the following algorithms:
 
