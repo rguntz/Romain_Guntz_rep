@@ -18,7 +18,6 @@ This repository contains a collection of my Master's and personal projects, show
 
 - Most projects are implemented in Python and C.
 - The repository is structured by course/project for easy navigation.
-- Some projects include high-level simulation code for robot and spacecraft control.
 
 ---
 
