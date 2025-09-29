@@ -12,6 +12,7 @@ This repository contains a collection of my Master's and personal projects, show
   - **Searching Algorithms**: Techniques for pathfinding and navigation.
   - **Dubins Car Model**: Planning paths for vehicles with constrained turning radius.
   - **Autonomous Driving in Frenet Frame**: Trajectory planning along roads using Frenet coordinates.
+  - **Markov Decision Processes (MDP)**: Modeling robot navigation as a sequential decision-making problem. The robot chooses actions to maximize long-term rewards while accounting for uncertainties in the environment.
   - **Rocket Landing Optimization**: Successive Convexification (SCvx) approach for rocket landing, including slack variables to avoid collisions with obstacles like walls.
 
 ## Notes
