@@ -37,3 +37,10 @@ This project implements a spaceship agent and planner for the PDM4AR simulation 
 6. The dynamics () provide the necessary system equations and derivatives for planning and optimization.
 
 This setup enables realistic trajectory planning and control of a spaceship in dynamic environments with moving obstacles.
+
+
+https://github.com/user-attachments/assets/81df91b4-d2df-4d04-9282-375b162a4b97
+
+https://github.com/user-attachments/assets/ea813dee-f071-4939-88bc-1d905e2d99d9
+
+
