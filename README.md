@@ -14,6 +14,7 @@ This repository contains a collection of my Master's and personal projects, show
   - **Autonomous Driving in Frenet Frame**: Trajectory planning along roads using Frenet coordinates.
   - **Markov Decision Processes (MDP)**: Modeling robot navigation as a sequential decision-making problem. The robot chooses actions to maximize long-term rewards while accounting for uncertainties in the environment.
   - **Rocket Landing Optimization**: Successive Convexification (SCvx) approach for rocket landing, including slack variables to avoid collisions with obstacles like walls.
+  - **Autonomous Vehicle Trajectory Planning**: Frenet-frame optimal trajectory generation using quintic lateral and quartic longitudinal polynomials, with dynamic obstacle avoidance via polygon-based collision checking and adaptive speed control in crowded traffic.
 
 ## Notes
 
