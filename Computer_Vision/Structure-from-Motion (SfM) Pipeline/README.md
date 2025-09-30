@@ -23,3 +23,8 @@ The pipeline:
 - Visualizes 3D points and camera poses
 
 Designed for educational purposes—illustrates core multi-view geometry concepts (epipolar geometry, DLT, RANSAC, incremental SfM) without external dependencies. Not optimized for large-scale use.
+
+
+<img width="640" height="210" alt="Capture d’écran 2025-09-30 à 21 47 10" src="https://github.com/user-attachments/assets/013908e9-439a-497d-aca5-987c474a0a15" />
+
+
