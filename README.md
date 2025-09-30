@@ -44,4 +44,10 @@ https://github.com/user-attachments/assets/c44900ee-f02f-4179-bd1c-214c3f7087ad
 
 <img width="188" height="256" alt="Capture d’écran 2025-09-30 à 21 23 20" src="https://github.com/user-attachments/assets/8151aeea-9dd9-4f75-8264-f94a8f6de996" />
 
+**Computer Vision**
+
+
+<img width="256" height="256" alt="blocks_harris" src="https://github.com/user-attachments/assets/0c6f2d40-5c37-46be-ac90-1c17b613909f" />
+
+
 
