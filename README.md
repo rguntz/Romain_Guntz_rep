@@ -24,3 +24,13 @@ This repository contains a collection of my Master's and personal projects, show
 ---
 
 Feel free to explore the folders to see the implementations and examples of usage.
+
+
+
+https://github.com/user-attachments/assets/2174a67b-29c1-4a6a-ac9c-27d9a303f667
+
+
+https://github.com/user-attachments/assets/c44900ee-f02f-4179-bd1c-214c3f7087ad
+
+
+
