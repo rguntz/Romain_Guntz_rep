@@ -18,7 +18,8 @@ This repository contains a collection of my Master's and personal projects, show
 - **Computer Vision**  
   Project from the Computer Vision Class (Prof. Dr. Marc Pollefeys).
   - **Harris Corner Detection and Feature Matching** This project implements Harris corner detection and feature matching between image pairs using hand-crafted descriptors (image patches).
-  - 
+  - **SegNet Light** A compact implementation of the **SegNet** architecture for semantic segmentation, designed for digit/background segmentation tasks
+  -  **Structure-from-Motion (SfM) Pipeline** This project implements an incremental Structure-from-Motion pipeline that reconstructs a 3D scene from unordered 2D images using only feature matches and camera intrinsics.
 
     
 
@@ -46,8 +47,13 @@ https://github.com/user-attachments/assets/c44900ee-f02f-4179-bd1c-214c3f7087ad
 
 **Computer Vision**
 
+**Harris Detector**
+
 
 <img width="256" height="256" alt="blocks_harris" src="https://github.com/user-attachments/assets/0c6f2d40-5c37-46be-ac90-1c17b613909f" />
 
+**SFM**
 
+
+<img width="636" height="206" alt="Capture d’écran 2025-09-30 à 21 45 28" src="https://github.com/user-attachments/assets/7baba738-b6d0-4901-8774-888c2a57f18f" />
 
