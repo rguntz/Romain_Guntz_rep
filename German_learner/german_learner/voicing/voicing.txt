@@ -1,0 +1,3 @@
+Mac:German_learner administrateur$ python3.12 -m venv ~/text_to_speech_venv
+Mac:German_learner administrateur$ source ~/text_to_speech_venv/bin/activate
+(text_to_speech_venv) Mac:German_learner administrateur$ 

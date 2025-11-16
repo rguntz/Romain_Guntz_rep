@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Sentence Learner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .word-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 1em;
+            width: 80px;
+            text-align: center;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
+        }
+
+        .btn-next {
+            background: #f56565;
+            color: white;
+        }
+
+        .btn-next:hover {
+            background: #e53e3e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 101, 101, 0.4);
+        }
+
+        button:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .sentence-display {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sentence-box {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sentence-text {
+            flex: 1;
+        }
+
+        .sentence-box.german {
+            font-weight: 500;
+        }
+
+        .sentence-box.english {
+            color: #48bb78;
+            font-style: italic;
+        }
+
+        .speaker-button {
+            background: #667eea;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .speaker-button:hover {
+            background: #5568d3;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .speaker-button:active {
+            transform: scale(0.95);
+        }
+
+        .speaker-button svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .word {
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        .word:hover {
+            background: #edf2f7;
+        }
+
+        .word.clicked {
+            background: #feb2b2;
+            color: #c53030;
+            font-weight: 600;
+        }
+
+        .saved-words {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fef5e7;
+            border-radius: 12px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .saved-words h3 {
+            color: #d68910;
+            margin-bottom: 15px;
+        }
+
+        .word-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .saved-word-tag {
+            background: #f39c12;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .remove-word {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .remove-word:hover {
+            color: #c0392b;
+        }
+
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-style: italic;
+        }
+
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .audio-playing {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇩🇪 German Sentence Learner</h1>
+        
+        <div class="controls">
+            <div class="word-selector">
+                <label for="n_words">Number of words:</label>
+                <input type="number" id="n_words" min="3" max="15" value="5">
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-primary" onclick="generateGerman()">Generate German Sentence</button>
+                <button class="btn-secondary" id="translateBtn" onclick="showTranslation()" disabled>Show English Translation</button>
+                <button class="btn-next" onclick="nextSentence()">Next Sentence</button>
+            </div>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div class="sentence-display">
+            <div id="germanSentence" class="sentence-box german">
+                <div class="sentence-text">Click "Generate German Sentence" to start!</div>
+            </div>
+            <div id="englishSentence" class="sentence-box english" style="display: none;">
+            </div>
+        </div>
+
+        <div class="saved-words">
+            <h3>📝 Words to Review</h3>
+            <div id="savedWordsList" class="word-list">
+                <em>No words saved yet. Click on words you don't understand!</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden audio element -->
+    <audio id="audioPlayer" preload="auto"></audio>
+
+    <script>
+        let currentEnglishTranslation = '';
+        let clickedWords = new Set();
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        // Load saved words from localStorage on page load
+        function loadSavedWords() {
+            const saved = localStorage.getItem('germanWordsToReview');
+            return saved ? JSON.parse(saved) : [];
+        }
+
+        // Save words to localStorage
+        function saveWords(words) {
+            localStorage.setItem('germanWordsToReview', JSON.stringify(words));
+        }
+
+        // Display saved words
+        function displaySavedWords() {
+            const words = loadSavedWords();
+            const container = document.getElementById('savedWordsList');
+            
+            if (words.length === 0) {
+                container.innerHTML = '<em>No words saved yet. Click on words you don\'t understand!</em>';
+                return;
+            }
+
+            container.innerHTML = words.map(word => `
+                <div class="saved-word-tag">
+                    ${word}
+                    <span class="remove-word" onclick="removeWord('${word}')">×</span>
+                </div>
+            `).join('');
+        }
+
+        // Remove a word from saved list
+        function removeWord(word) {
+            let words = loadSavedWords();
+            words = words.filter(w => w !== word);
+            saveWords(words);
+            displaySavedWords();
+        }
+
+        // Play audio
+        function playAudio() {
+            const speakerBtn = document.querySelector('.speaker-button');
+            if (speakerBtn) {
+                speakerBtn.classList.add('audio-playing');
+            }
+            
+            audioPlayer.currentTime = 0;
+            audioPlayer.play().catch(error => {
+                console.error('Error playing audio:', error);
+            });
+
+            audioPlayer.onended = () => {
+                if (speakerBtn) {
+                    speakerBtn.classList.remove('audio-playing');
+                }
+            };
+        }
+
+        // Generate German sentence
+        async function generateGerman() {
+            const n_words = document.getElementById('n_words').value;
+            const germanDiv = document.getElementById('germanSentence');
+            const englishDiv = document.getElementById('englishSentence');
+            const errorDiv = document.getElementById('error');
+            const translateBtn = document.getElementById('translateBtn');
+
+            // Reset state
+            germanDiv.innerHTML = '<div class="sentence-text"><div class="loading">Generating...</div></div>';
+            englishDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+            translateBtn.disabled = true;
+            clickedWords.clear();
+
+            // Get words to review from localStorage
+            const wordsToReview = loadSavedWords();
+
+            try {
+                const response = await fetch('/generate_german', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        n_words: parseInt(n_words),
+                        words_to_review: wordsToReview
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    currentEnglishTranslation = data.english_sentence;
+                    
+                    // Split sentence into words and make them clickable
+                    const words = data.german_sentence.split(' ');
+                    const wordsHtml = words.map((word, index) => 
+                        `<span class="word" data-word="${word}" onclick="toggleWord(this)">${word}</span>`
+                    ).join(' ');
+                    
+                    // Add speaker button
+                    germanDiv.innerHTML = `
+                        <div class="sentence-text">${wordsHtml}</div>
+                        <button class="speaker-button" onclick="playAudio()" title="Play audio">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                    `;
+                    
+                    translateBtn.disabled = false;
+
+                    // Load and auto-play audio
+                    if (data.audio_ready) {
+                        // Add timestamp to prevent caching
+                        audioPlayer.src = '/audio/german_sentence.wav?t=' + new Date().getTime();
+                        audioPlayer.load();
+                        
+                        // Auto-play after a short delay to ensure audio is loaded
+                        setTimeout(() => {
+                            playAudio();
+                        }, 300);
+                    }
+                } else {
+                    throw new Error(data.error || 'Failed to generate sentence');
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Error: ' + error.message;
+                errorDiv.style.display = 'block';
+                germanDiv.innerHTML = '<div class="sentence-text">Failed to generate sentence.</div>';
+            }
+        }
+
+        // Toggle word selection
+        function toggleWord(element) {
+            const word = element.getAttribute('data-word');
+            element.classList.toggle('clicked');
+
+            if (clickedWords.has(word)) {
+                clickedWords.delete(word);
+            } else {
+                clickedWords.add(word);
+            }
+        }
+
+        // Show English translation
+        function showTranslation() {
+            const englishDiv = document.getElementById('englishSentence');
+            englishDiv.textContent = currentEnglishTranslation;
+            englishDiv.style.display = 'flex';
+        }
+
+        // Next sentence - save clicked words and reset
+        function nextSentence() {
+            // Save clicked words to localStorage
+            if (clickedWords.size > 0) {
+                let savedWords = loadSavedWords();
+                clickedWords.forEach(word => {
+                    // Remove punctuation for storage
+                    const cleanWord = word.replace(/[.,!?;:]/g, '');
+                    if (!savedWords.includes(cleanWord)) {
+                        savedWords.push(cleanWord);
+                    }
+                });
+                saveWords(savedWords);
+                displaySavedWords();
+            }
+
+            // Reset everything
+            clickedWords.clear();
+            currentEnglishTranslation = '';
+            document.getElementById('germanSentence').innerHTML = '<div class="sentence-text">Click "Generate German Sentence" to start!</div>';
+            document.getElementById('englishSentence').style.display = 'none';
+            document.getElementById('translateBtn').disabled = true;
+            
+            // Clear audio
+            audioPlayer.src = '';
+        }
+
+        // Initialize on page load
+        displaySavedWords();
+    </script>
+</body>
+</html>
