@@ -2,7 +2,7 @@ import os
 
 DATA_DIR = "data"
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = ""
 WORDS_JSON_FILE = f"{DATA_DIR}/deu_news_10K_words_clean.json"
 TEMPERATURE = 0.7
 
