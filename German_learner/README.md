@@ -46,26 +46,6 @@ A key feature is adaptive word learning: users can click on words they don’t u
 
 ---
 
-### 4. `app.py`
-- **Purpose:** Flask web application serving the interactive interface.
-- **Endpoints:**
-  - `/`  
-    Serves the main HTML page.
-  - `/generate_german` [POST]  
-    Generates a German sentence, its English translation, and the corresponding audio file.
-  - `/audio/german_sentence.wav`  
-    Serves the generated audio file.
-  - `/get_english` [POST]  
-    Returns the English translation of a given German sentence.
-- **Integration:** Combines all modules (`generation.py`, `sampling.py`, `german_voice.py`) for a complete workflow:
-  1. Sample or select words.
-  2. Generate a German sentence and English translation.
-  3. Synthesize speech for the German sentence.
-  4. Serve results via JSON API.
-  5. Track user interaction: words marked as "unknown" are given higher probability in future rounds.
-
----
-
 ## Workflow Overview
 
 1. **Word Selection:** Either manually or using `sampling.py` for random frequency-based sampling.
@@ -88,7 +68,9 @@ A key feature is adaptive word learning: users can click on words they don’t u
 
 ## Run the Code
 
+```
 python3 app.py
+```
 
 <img width="755" height="785" alt="Capture d’écran 2025-12-20 à 17 50 46" src="https://github.com/user-attachments/assets/52fe1824-7b3a-4240-89af-0cf5b27269c3" />
 
