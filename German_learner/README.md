@@ -90,7 +90,6 @@ A key feature is adaptive word learning: users can click on words they don’t u
 
 python3 app.py
 
-```
 <img width="755" height="785" alt="Capture d’écran 2025-12-20 à 17 50 46" src="https://github.com/user-attachments/assets/52fe1824-7b3a-4240-89af-0cf5b27269c3" />
 
 
