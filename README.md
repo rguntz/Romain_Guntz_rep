@@ -20,6 +20,16 @@ This repository contains a collection of my Master's and personal projects, show
   - **Harris Corner Detection and Feature Matching** This project implements Harris corner detection and feature matching between image pairs using hand-crafted descriptors (image patches).
   - **SegNet Light** A compact implementation of the **SegNet** architecture for semantic segmentation, designed for digit/background segmentation tasks
   -  **Structure-from-Motion (SfM) Pipeline** This project implements an incremental Structure-from-Motion pipeline that reconstructs a 3D scene from unordered 2D images using only feature matches and camera intrinsics.
+ 
+- **Coming Soon**
+
+- My current project focuses on dexterous manipulation for assembly tasks. The approach builds on the ideas introduced in the paper “Imitation Bootstrapped Reinforcement Learning” by Hengyuan Hu et al. It starts by learning a policy from expert demonstrations, which is later reused as a guiding prior to improve exploration efficiency and learning stability during reinforcement learning. We then extend this framework by training a diffusion-based policy, which is subsequently fine-tuned using imitation-bootstrapped reinforcement learning. For this final stage, either a residual policy or a steering diffusion policy approach will be adopted. Stay tuned! 
+
+
+https://github.com/user-attachments/assets/6d233441-b757-4c48-aed9-c1964219154b
+
+
+  
 
     
 
