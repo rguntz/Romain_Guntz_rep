@@ -20,7 +20,12 @@ This repository contains a collection of my Master's and personal projects, show
   - **Harris Corner Detection and Feature Matching** This project implements Harris corner detection and feature matching between image pairs using hand-crafted descriptors (image patches).
   - **SegNet Light** A compact implementation of the **SegNet** architecture for semantic segmentation, designed for digit/background segmentation tasks
   -  **Structure-from-Motion (SfM) Pipeline** This project implements an incremental Structure-from-Motion pipeline that reconstructs a 3D scene from unordered 2D images using only feature matches and camera intrinsics.
- 
+
+- **German Sentence Generator with Speech Synthesis**
+
+- A web application that generates natural German sentences from a set of words, provides English translations, and synthesizes German speech.  
+Features adaptive learning: words the user doesn’t know are prioritized in future rounds for personalized vocabulary practice.
+
 - **Coming Soon**
 
 - My current project focuses on dexterous manipulation for assembly tasks. The approach builds on the ideas introduced in the paper “Imitation Bootstrapped Reinforcement Learning” by Hengyuan Hu et al. It starts by learning a policy from expert demonstrations, which is later reused as a guiding prior to improve exploration efficiency and learning stability during reinforcement learning. We then extend this framework by training a diffusion-based policy, which is subsequently fine-tuned using imitation-bootstrapped reinforcement learning. For this final stage, either a residual policy or a steering diffusion policy approach will be adopted. Stay tuned! 
@@ -68,10 +73,6 @@ https://github.com/user-attachments/assets/c44900ee-f02f-4179-bd1c-214c3f7087ad
 <img width="636" height="206" alt="Capture d’écran 2025-09-30 à 21 45 28" src="https://github.com/user-attachments/assets/7baba738-b6d0-4901-8774-888c2a57f18f" />
 
 # German Sentence Generator with Speech Synthesis
-
-A web application that generates natural German sentences from a set of words, provides English translations, and synthesizes German speech.  
-Features adaptive learning: words the user doesn’t know are prioritized in future rounds for personalized vocabulary practice.
-
 
 
 <img width="755" height="785" alt="Capture d’écran 2025-12-20 à 17 50 46" src="https://github.com/user-attachments/assets/2f43551e-2947-40d6-8102-573c54b5360c" />
