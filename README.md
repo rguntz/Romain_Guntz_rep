@@ -34,8 +34,8 @@ Features adaptive learning: words the user doesn’t know are prioritized in fut
 https://github.com/user-attachments/assets/6d233441-b757-4c48-aed9-c1964219154b
 
 
-  
 
+Note: This is the first time I am running the RL policy. Its motion is going to become smoother!
     
 
 ## Notes
