@@ -37,12 +37,6 @@ https://github.com/user-attachments/assets/6d233441-b757-4c48-aed9-c1964219154b
 
 Note: This is the first time I am running the RL policy. Its motion is going to become smoother!
     
-
-## Notes
-
-- Most projects are implemented in Python and C.
-- The repository is structured by course/project for easy navigation.
-
 ---
 
 Feel free to explore the folders to see the implementations and examples of usage.
