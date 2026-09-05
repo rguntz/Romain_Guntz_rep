@@ -26,9 +26,9 @@ This repository contains a collection of my Master's and personal projects, show
   A web application that generates natural German sentences from a set of words, provides English translations, and synthesizes German speech.  
   Features adaptive learning: words the user doesn’t know are prioritized in future rounds for personalized vocabulary practice.
 
-- **Coming Soon**
+- **Real-World Sample-Efficient Reinforcement Learning**
 
-  My current project focuses on dexterous manipulation for assembly tasks. The approach builds on ideas introduced in the paper “Imitation Bootstrapped Reinforcement Learning” by Hengyuan Hu et al. It begins by learning a policy from expert demonstrations, which is then reused as a guiding prior to improve exploration efficiency and learning stability during reinforcement learning, in parallel with directly incorporating demonstrations into the RL pipeline. In the final stage, this RL framework will be applied to train a residual policy on top of a diffusion policy. Stay tuned!
+  My current project focuses on dexterous manipulation for assembly tasks. The approach builds on ideas introduced in the paper “Imitation Bootstrapped Reinforcement Learning” by Hengyuan Hu et al. It begins by learning a policy from expert demonstrations, which is then reused as a guiding prior to improve exploration efficiency and learning stability during reinforcement learning, in parallel with directly incorporating demonstrations into the RL pipeline. Using this approach, the policy learned the assembly task in about one hour of real-world practice — with real-world rollouts and improvement, and without relying on simulation.
   
 
 https://github.com/user-attachments/assets/6d233441-b757-4c48-aed9-c1964219154b
