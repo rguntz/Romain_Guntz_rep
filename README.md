@@ -6,11 +6,11 @@ This repository contains a collection of my Master's and personal projects, show
 
 My current project focuses on dexterous manipulation for assembly tasks. The approach builds on ideas introduced in the paper "Imitation Bootstrapped Reinforcement Learning" by Hengyuan Hu et al. It begins by learning a policy from expert demonstrations, which is then reused as a guiding prior to improve exploration efficiency and learning stability during reinforcement learning, in parallel with directly incorporating demonstrations into the RL pipeline. Using this approach, the policy learned the assembly task in about one hour of real-world practice — with real-world rollouts and improvement, and without relying on simulation.
 
-<div align="center">
-
-https://github.com/user-attachments/assets/6d233441-b757-4c48-aed9-c1964219154b
-
-</div>
+<p align="center">
+  <img src="media/real_world_rl_demo.gif" alt="Real-world RL policy rollout" width="480">
+  <br>
+  Full-quality video: <a href="https://github.com/user-attachments/assets/6d233441-b757-4c48-aed9-c1964219154b">original recording</a>
+</p>
 
 *Note: this is the first time I am running the RL policy — its motion is going to become smoother!*
 
@@ -35,19 +35,19 @@ Coursework projects focusing on motion planning and control for autonomous robot
 
 **Rocket Landing Optimization**
 
-<div align="center">
-
-https://github.com/user-attachments/assets/2174a67b-29c1-4a6a-ac9c-27d9a303f667
-
-</div>
+<p align="center">
+  <img src="Planning_and_decision_making_for_autonomous_robots/media/rocket_landing.gif" alt="Rocket landing optimization" width="480">
+  <br>
+  Full-quality video: <a href="https://github.com/user-attachments/assets/2174a67b-29c1-4a6a-ac9c-27d9a303f667">original recording</a>
+</p>
 
 **Autonomous Vehicle Trajectory Planning**
 
-<div align="center">
-
-https://github.com/user-attachments/assets/c44900ee-f02f-4179-bd1c-214c3f7087ad
-
-</div>
+<p align="center">
+  <img src="Planning_and_decision_making_for_autonomous_robots/media/trajectory_planning.gif" alt="Autonomous vehicle trajectory planning" width="480">
+  <br>
+  Full-quality video: <a href="https://github.com/user-attachments/assets/c44900ee-f02f-4179-bd1c-214c3f7087ad">original recording</a>
+</p>
 
 ## Backgammon (Tavli) Algorithm
 
