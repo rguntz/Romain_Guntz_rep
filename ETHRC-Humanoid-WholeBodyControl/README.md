@@ -76,6 +76,8 @@ hf upload-large-folder ETHRC-humanoid/<dataset-name> outputs/<dataset-name>-augm
 
 Example episode recorded with Pico teleoperation on the `PickPlaceBottleLoco` task in the RoboCasa kitchen:
 
-![Teleoperated episode](videos/gr00t_episode_000000.gif)
-
-Full-quality video: [gr00t_episode_000000.mp4](videos/gr00t_episode_000000.mp4)
+<p align="center">
+  <img src="videos/gr00t_episode_000000.gif" alt="Teleoperated episode" width="480">
+  <br>
+  Full-quality video: <a href="videos/gr00t_episode_000000.mp4">gr00t_episode_000000.mp4</a>
+</p>
