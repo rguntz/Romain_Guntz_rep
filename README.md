@@ -74,6 +74,20 @@ https://github.com/user-attachments/assets/6d233441-b757-4c48-aed9-c1964219154b
 
 *Note: this is the first time I am running the RL policy — its motion is going to become smoother!*
 
+## ETHRC Humanoid — Isaac GR00T Fine-tuning
+
+Fine-tuning of NVIDIA's [Isaac-GR00T](https://github.com/NVIDIA/Isaac-GR00T) vision-language-action model for a Unitree G1 humanoid. Main contribution: extended the action space to use 6D rotation representations for end-effector poses — a rotation format with better continuity properties than quaternions for manipulation learning.
+
+## ETHRC Humanoid — Whole-Body Control
+
+Forked from NVIDIA's [GR00T-WholeBodyControl](https://github.com/NVlabs/GR00T-WholeBodyControl) for a Unitree G1 humanoid. The original simulation only shipped a handful of scenes with limited environment variation (e.g. `unitree_g1.LMPnPAppleToPlateDC`), so I integrated [RoboCasa](https://github.com/robocasa/robocasa) — a diverse household simulation benchmark — to get a much more modulable set of kitchen scenes (tables, chairs, fridges, countertops, ...) for the G1, which isn't natively supported by RoboCasa. Combined with Pico VR teleoperation, this lets me record teleoperated household-task demonstrations in simulation to represent realistic loco-manipulation difficulty. A dataset has been recorded and will be published on Hugging Face soon.
+
+<p align="center">
+  <img src="ETHRC-Humanoid-WholeBodyControl/videos/gr00t_episode_000000.gif" alt="Teleoperated episode" width="480">
+  <br>
+  Full-quality video: <a href="ETHRC-Humanoid-WholeBodyControl/videos/gr00t_episode_000000.mp4">gr00t_episode_000000.mp4</a>
+</p>
+
 ---
 
 Feel free to explore the folders to see the implementations and examples of usage.

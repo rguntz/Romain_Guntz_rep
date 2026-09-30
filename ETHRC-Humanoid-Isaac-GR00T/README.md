@@ -2,6 +2,8 @@
 
 Fine-tuning and deployment of [GR00T N1.7](https://huggingface.co/nvidia/GR00T-N1.7-3B), NVIDIA's open vision-language-action model for generalist humanoid robot skills, on custom robot datasets.
 
+This repo is forked from NVIDIA's [Isaac-GR00T](https://github.com/NVIDIA/Isaac-GR00T). Main modification: extended the action space to use 6D rotation representations for end-effector poses (see [G1-LocoManip](examples/G1-LocoManip)) — a rotation format with better continuity properties than quaternions for manipulation learning.
+
 ---
 
 ## Table of contents

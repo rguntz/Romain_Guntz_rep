@@ -1,3 +1,9 @@
+# ETHRC Humanoid — Whole-Body Control
+
+Forked from NVIDIA's [GR00T-WholeBodyControl](https://github.com/NVlabs/GR00T-WholeBodyControl) for a Unitree G1 humanoid. The original simulation only shipped a handful of scenes with limited environment variation (e.g. `unitree_g1.LMPnPAppleToPlateDC`), so I integrated [RoboCasa](https://github.com/robocasa/robocasa) — a diverse household simulation benchmark — to get a much more modulable set of kitchen scenes (tables, chairs, fridges, countertops, ...) for the G1, which isn't natively supported by RoboCasa. Combined with Pico VR teleoperation, this is used to record teleoperated household-task demonstrations in simulation.
+
+---
+
 # Installation 
 
 ## For the first time : 
