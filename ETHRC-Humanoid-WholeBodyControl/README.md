@@ -22,25 +22,18 @@ python -m decoupled_wbc.dexmg.gr00trobocasa.robocasa.scripts.download_kitchen_as
 ## Without teleop : 
 ```shell
 
-python decoupled_wbc/scripts/deploy_g1.py     --interface sim     --camera_host localhost     --sim_in_single_process     --simulator robocasa     --image-publish     --enable-offscreen     --env_name PnPBottleRomain    
+python decoupled_wbc/scripts/deploy_g1.py     --interface sim     --camera_host localhost     --sim_in_single_process     --simulator robocasa     --image-publish     --enable-offscreen     --env_name PickPlaceBottleLoco    
 ```
 
 ## With teleop : 
 On robot PC, double click app icon of XRoboToolkit-PC-Service or run service
 ```shell 
-    /opt/apps/roboticsservice/runService.sh
+/opt/apps/roboticsservice/runService.sh
 ```
 
 ```shell
-python decoupled_wbc/scripts/deploy_g1.py     --interface sim     --camera_host localhost     --sim_in_single_process     --simulator robocasa     --image-publish     --enable-offscreen     --env_name PnPBottleRomain     --hand_control_device=pico     --body_control_device=pico
+python decoupled_wbc/scripts/deploy_g1.py     --interface sim     --camera_host localhost     --sim_in_single_process     --simulator robocasa     --image-publish     --enable-offscreen     --env_name PickPlaceBottleLoco     --hand_control_device=pico     --body_control_device=pico
 ```
-(the name of the env must be changed)
-
-
-### Task prompt for the PnPBottleRomain task. 
-
-Move to the right first, then pick up the cardboard box located on the countertop in front of the refrigerator, and place it on the right side of the sink.
-
 
 ### Task prompt for the PickPlaceBottleLoco task
 
@@ -78,3 +71,11 @@ hf auth login
 hf upload-large-folder ETHRC-humanoid/<dataset-name> outputs/<dataset-name>-augmented --repo-type dataset
 ```
 
+
+## Example of teleoperated data
+
+Example episode recorded with Pico teleoperation on the `PickPlaceBottleLoco` task in the RoboCasa kitchen:
+
+![Teleoperated episode](videos/gr00t_episode_000000.gif)
+
+Full-quality video: [gr00t_episode_000000.mp4](videos/gr00t_episode_000000.mp4)
