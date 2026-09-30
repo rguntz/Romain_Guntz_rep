@@ -78,7 +78,7 @@ Project from the Computer Vision class (Prof. Dr. Marc Pollefeys).
 
 ## German Sentence Generator with Speech Synthesis
 
-A web application that generates natural German sentences from a set of words, provides English translations, and synthesizes German speech. Features adaptive learning: words the user doesn't know are prioritized in future rounds for personalized vocabulary practice.
+A web application that generates natural German sentences from a set of words, provides English translations, and synthesizes German speech. Words are sampled according to a frequency dictionary, ensuring that the most common and useful vocabulary is learned first. Features adaptive learning: words the user doesn't know are prioritized in future rounds for personalized vocabulary practice.
 
 <div align="center">
   <img width="755" height="785" alt="German Sentence Generator app screenshot" src="https://github.com/user-attachments/assets/2f43551e-2947-40d6-8102-573c54b5360c" />
