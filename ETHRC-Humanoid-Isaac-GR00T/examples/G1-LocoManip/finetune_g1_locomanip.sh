@@ -3,7 +3,8 @@
 #
 # Dataset: ETHRC-humanoid/g1-sim-locomanipulation-augmented (LeRobot v2.1)
 # Task   : Navigate + pick-and-place on Unitree G1 (ego-view, 20 fps)
-# Action : 18-dim — dual EEF abs poses (pos+quat) + base velocity + height
+# Action : 36-dim — dual EEF rel rot6d poses (xyz+rot6d) + dual hand finger
+#          joints (7-dof each) + base velocity + height
 #
 # Usage:
 #   bash examples/G1-LocoManip/finetune_g1_locomanip.sh \

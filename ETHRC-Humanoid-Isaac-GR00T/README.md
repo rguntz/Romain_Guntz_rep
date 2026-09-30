@@ -90,8 +90,15 @@ End-to-end workflow for fine-tuning GR00T N1.7 on the Unitree G1 locomanipulatio
 |---|---|---|---|
 | 0–8 | `left_eef_rot6d` | **RELATIVE** | Left wrist pose: xyz(3) + rot6d(6) — relative to current pose via SE(3) |
 | 9–17 | `right_eef_rot6d` | **RELATIVE** | Right wrist pose: xyz(3) + rot6d(6) — relative to current pose via SE(3) |
-| 18–20 | `navigate_command` | ABSOLUTE | Base velocity (lin\_x, lin\_y, ang\_z) |
-| 21 | `base_height_command` | ABSOLUTE | Base height target |
+| 18–24 | `left_hand` | ABSOLUTE | Left hand finger joint targets (index/middle/thumb, 7-dof) |
+| 25–31 | `right_hand` | ABSOLUTE | Right hand finger joint targets (index/middle/thumb, 7-dof) |
+| 32–34 | `navigate_command` | ABSOLUTE | Base velocity (lin\_x, lin\_y, ang\_z) |
+| 35 | `base_height_command` | ABSOLUTE | Base height target |
+
+> `left_hand`/`right_hand` are raw slices of the source dataset's flat `action` column
+> (see `meta/modality.json`) — no conversion script needed, unlike the EEF rot6d keys.
+> Without them the model never learns to close its hand; only wrist pose and locomotion
+> were trained previously.
 
 ### State space (model inputs)
 
@@ -99,6 +106,8 @@ End-to-end workflow for fine-tuning GR00T N1.7 on the Unitree G1 locomanipulatio
 |---|---|---|
 | `left_eef_rot6d` | 9 | Left wrist current pose: xyz(3) + rot6d(6) |
 | `right_eef_rot6d` | 9 | Right wrist current pose: xyz(3) + rot6d(6) |
+| `left_hand` | 7 | Left hand current finger joint positions |
+| `right_hand` | 7 | Right hand current finger joint positions |
 | `ego_view` | 360×640×3 | Front RGB camera |
 | Language annotation | string | Task description |
 
@@ -189,7 +198,8 @@ python gr00t/data/stats.py \
     --modality-config-path examples/G1-LocoManip/g1_locomanip_config.py
 ```
 
-> If you change `delta_indices` in the modality config (e.g. the action horizon), re-run this step.
+> Re-run this step whenever the modality config changes — a new `delta_indices` (e.g. the
+> action horizon), or new state/action keys (e.g. `left_hand`/`right_hand`).
 
 ### 4.5 Fine-tune
 
